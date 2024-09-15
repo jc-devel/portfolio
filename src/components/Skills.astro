@@ -1,0 +1,21 @@
+---
+// src/components/Skills.astro
+const skills = [
+  "JavaScript", "TypeScript", "React", "Vue.js", "Node.js",
+  "HTML5", "CSS3", "Tailwind CSS", "Git", "Webpack",
+  "Jest", "Cypress", "GraphQL", "RESTful APIs", "Agile Methodologies"
+];
+---
+
+<section id="skills" class="py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center dark:text-white">Skills</h2>
+    <div class="flex flex-wrap justify-center gap-4">
+      {skills.map((skill) => (
+        <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+          {skill}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

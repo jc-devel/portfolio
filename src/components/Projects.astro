@@ -1,0 +1,52 @@
+---
+// src/components/Projects.astro
+const projects = [
+  {
+    title: "Project 1",
+    description: "A brief description of Project 1 and its features.",
+    image: "https://placehold.co/300x400",
+    technologies: ["React", "Node.js", "MongoDB"],
+    github: "https://github.com/yourusername/project1",
+    preview: "https://project1.com"
+  },
+  {
+    title: "Project 2",
+    description: "A brief description of Project 2 and its features.",
+    image: "https://placehold.co/300x400",
+    technologies: ["Vue.js", "Express", "PostgreSQL"],
+    github: "https://github.com/yourusername/project2",
+    preview: "https://project2.com"
+  },
+  // Add more projects as needed
+];
+---
+
+<section id="projects" class="py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center dark:text-white">My Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+          <img src={project.image} alt={project.title} class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 dark:text-white">{project.title}</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              {project.technologies.map((tech) => (
+                <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-full text-sm">{tech}</span>
+              ))}
+            </div>
+            <div class="flex justify-between">
+              <a href={project.github} target="_blank" rel="noopener noreferrer" class="bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-800 px-4 py-2 rounded hover:bg-gray-700 dark:hover:bg-gray-300 transition duration-300">
+                GitHub
+              </a>
+              <a href={project.preview} target="_blank" rel="noopener noreferrer" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300">
+                Preview
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
