@@ -2,12 +2,12 @@
 // src/components/Projects.astro
 const projects = [
   {
-    title: "Project 1",
-    description: "A brief description of Project 1 and its features.",
+    title: "Proyecto de Leyes",
+    description: "Landing y gestion de citas, contratos y leyes. Desarrollo de una aplicación web con Astro y React.",
     image: "https://placehold.co/300x400",
-    technologies: ["React", "Node.js", "MongoDB"],
-    github: "https://github.com/yourusername/project1",
-    preview: "https://project1.com"
+    technologies: ["Astro", "Node.js", "Sqlite"],
+    // github: "https://github.com/yourusername/project1",
+    preview: "https://pleyes.dotdev.cl"
   },
   {
     title: "Project 2",
@@ -26,7 +26,7 @@ const projects = [
     <h2 class="text-3xl font-bold mb-8 text-center dark:text-white">My Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projects.map((project) => (
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+        <div class="dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
           <img src={project.image} alt={project.title} class="w-full h-48 object-cover" />
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2 dark:text-white">{project.title}</h3>
@@ -37,11 +37,14 @@ const projects = [
               ))}
             </div>
             <div class="flex justify-between">
-              <a href={project.github} target="_blank" rel="noopener noreferrer" class="bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-800 px-4 py-2 rounded hover:bg-gray-700 dark:hover:bg-gray-300 transition duration-300">
+              {project.github && (
+                <a href={project.github} target="_blank" rel="noopener noreferrer" class="bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-800 px-4 py-2 rounded hover:bg-gray-700 dark:hover:bg-gray-300 transition duration-300">
                 GitHub
               </a>
+              )}
+              
               <a href={project.preview} target="_blank" rel="noopener noreferrer" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300">
-                Preview
+                Ver
               </a>
             </div>
           </div>
