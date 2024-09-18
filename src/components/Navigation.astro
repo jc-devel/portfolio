@@ -5,8 +5,8 @@ import ThemeToggle from './ThemeToggle.astro';
 
 <nav class="dark:bg-gray-800 shadow-md">
   <div class="container mx-auto px-4">
-    <div class="flex justify-between items-center h-16">
-      <div class="flex space-x-4">
+    <div class="flex justify-center items-center h-16">
+      <div class="flex space-x-4 font-bold">
         <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Experiencia</a>
         <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Proyectos</a>
         <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Sobre mi</a>
@@ -16,3 +16,22 @@ import ThemeToggle from './ThemeToggle.astro';
     </div>
   </div>
 </nav>
+
+<style is:global>
+  nav {
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    /* animation: adjust-header linear both; */
+    animation-timeline: scroll();
+    animation-range: 0 200px;
+  }
+
+  @keyframes adjust-header {
+    to {
+      background: rgba(0, 0, 0, .3);
+      font-size: 12px;
+      height: 24px;
+    }
+  }
+</style>
